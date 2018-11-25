@@ -1,3 +1,4 @@
 backend/favourite-colour/venv
 backend/favourite-colour/app/__pycache__/
 *.pyc
+backend/favourite-colour/app/__pycache__/*.pyc
