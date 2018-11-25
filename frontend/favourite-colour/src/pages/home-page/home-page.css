@@ -1,0 +1,17 @@
+.home-page {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+}
+
+.options {
+    height: 100%;
+    width: 33.3333%;
+    float: left;
+}
+
+#blue-option { background: blue; }
+#yellow-option { background: yellow; }
+#red-option { background: red; }

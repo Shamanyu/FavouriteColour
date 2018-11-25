@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import {BrowserRouter, Switch, Route} from 'react-router-dom';
 
 import './App.css';
-import HomePage from './pages/home-page';
+import HomePage from './pages/home-page/home-page';
 import ResultsPage from './pages/results-page';
 import Error404Page from './pages/error-404-page';
 
