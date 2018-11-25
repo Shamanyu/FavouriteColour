@@ -1,6 +1,7 @@
 from app import app
+from .models import ColourVoteCount
 
-@app.route('/')
-@app.route('/index')
-def index():
-    return "Hello, World!"
+@app.route('/results', methods=['GET'])
+def results():
+    a = ColourVoteCount.query.get(ident=1)
+    print (a)
