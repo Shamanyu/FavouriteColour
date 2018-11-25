@@ -13,7 +13,7 @@ class App extends Component {
         <Switch>
             <Route path="/" exact component={HomePage}/>
             <Route path="/results" exact component={ResultsPage}/>
-            <Route path component={Error404Page}/>
+            <Route component={Error404Page}/>
         </Switch>
       </BrowserRouter>
     );
