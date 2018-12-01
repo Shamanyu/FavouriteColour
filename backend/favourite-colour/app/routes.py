@@ -27,7 +27,16 @@ def results():
 @app.route('/colour', methods=['GET'])
 @cross_origin(origin='*', headers=['Content-Type', 'Authorization'])
 def colour():
-    return jsonify("#FFFF00")
+    colour_vote_count_data = ColourVoteCount.query.all()
+    total_votes = 0
+    colour_code_raw_sum = 0
+    for data in colour_vote_count_data:
+        colour_code = data.colour_code
+        colour_code_int = int(colour_code[1:], 16)
+        votes = data.votes
+        colour_code_raw_sum += colour_code_int*votes
+        total_votes += votes
+    return '#'+hex(int(colour_code_raw_sum/total_votes))[2:]
 
 
 @app.route('/vote', methods=['POST'])
