@@ -1,13 +1,12 @@
-from flask import Response, jsonify
+from flask import jsonify
 
 from app import app
 from .models import ColourVoteCount
+from .serializers import colours_vote_count_schema
 
 
 @app.route('/results', methods=['GET'])
 def results():
-    colour_vote_count_object = ColourVoteCount.query.filter_by(colour='red').first()
-    return jsonify({
-            'colour': colour_vote_count_object.colour,
-            'votes': colour_vote_count_object.votes
-        })
+    colour_vote_count_data = ColourVoteCount.query.all()
+    result = colours_vote_count_schema.dump(colour_vote_count_data)
+    return jsonify(result.data)

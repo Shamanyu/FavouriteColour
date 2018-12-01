@@ -1,5 +1,6 @@
 from app import db
 
+
 class ColourVoteCount(db.Model):
     __tablename__ = 'colour_vote_count'
     id = db.Column(db.Integer, primary_key=True, autoincrement=True)
