@@ -3,7 +3,7 @@ import {BrowserRouter, Switch, Route} from 'react-router-dom';
 
 import './App.css';
 import HomePage from './pages/home-page/home-page';
-import ResultsPage from './pages/results-page';
+import ResultsPage from './pages/results-page/results-page';
 import Error404Page from './pages/error-404-page';
 
 class App extends Component {
