@@ -24,6 +24,12 @@ def results():
     return jsonify(result.data)
 
 
+@app.route('/colour', methods=['GET'])
+@cross_origin(origin='*', headers=['Content-Type', 'Authorization'])
+def colour():
+    return jsonify("#FFFF00")
+
+
 @app.route('/vote', methods=['POST'])
 @cross_origin(origin='*', headers=['Content-Type', 'Authorization'])
 def vote():
