@@ -17,11 +17,11 @@ class HomePage extends Component {
         fetch('http://localhost:5001/vote', {
           method: 'POST',
           headers: {
-            'Accept': 'application/json',
-            'Content-Type': 'application/json',
+                'Accept': 'application/json',
+                'Content-Type': 'application/json',
           },
           body: JSON.stringify({
-            colour: colour,
+                colour: colour,
           })
         });
         this.setState({ navigate: true });
@@ -31,7 +31,7 @@ class HomePage extends Component {
         const { navigate } = this.state;
 
         if (navigate) {
-        return <Redirect to="/results" push={true} />
+            return <Redirect to="/results" push={true} />
         }
 
         return (
