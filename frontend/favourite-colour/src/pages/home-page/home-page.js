@@ -2,6 +2,7 @@ import React, {Component} from "react";
 import { Redirect } from 'react-router';
 
 import './home-page.css';
+import $ from "jquery";
 
 class HomePage extends Component {
 
@@ -11,15 +12,13 @@ class HomePage extends Component {
 
 
     addVote = (colour) => {
-        fetch('http://localhost:5001/vote', {
-          method: 'POST',
-          headers: {
-                'Accept': 'application/json',
-                'Content-Type': 'application/json',
-          },
-          body: JSON.stringify({
+        $.ajax({
+            async: false,
+            url: "http://localhost:5001/vote",
+            type: 'POST',
+            data: {
                 colour: colour,
-          })
+            }
         });
         this.setState({ navigate: true });
     }

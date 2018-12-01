@@ -43,7 +43,7 @@ def colour():
 @cross_origin(origin='*', headers=['Content-Type', 'Authorization'])
 def vote():
     try:
-        data = json.loads(request.data)
+        data = json.loads(json.dumps(request.form))
         colour = data['colour']
         colour_object = ColourVoteCount.query.filter_by(colour=colour).first()
         colour_object.votes += 1
