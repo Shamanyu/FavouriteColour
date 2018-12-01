@@ -4,14 +4,11 @@ import { Redirect } from 'react-router';
 import './home-page.css';
 
 class HomePage extends Component {
+
     state = {
         navigate: false
     }
 
-    constructor(props) {
-        super(props);
-        this.addVote = this.addVote.bind(this);
-    }
 
     addVote = (colour) => {
         fetch('http://localhost:5001/vote', {
