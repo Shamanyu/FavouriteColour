@@ -24,7 +24,7 @@ class HomePage extends Component {
             colour: colour,
           })
         });
-        // this.setState({ navigate: true });
+        this.setState({ navigate: true });
     }
 
     render(){
